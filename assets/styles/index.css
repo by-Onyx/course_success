@@ -20,16 +20,27 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     margin: 0 12.5vw;
 }
 
+.first-page {
+    background-image: linear-gradient(90deg, #000000 0.13%, #000000 0.14%, rgba(0, 0, 0, 0.00) 99.56%),
+    url('/assets/images/page-1.png');
+    background-size: cover;
+}
+
 .header {
     display: flex;
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
     padding-bottom: 80px;
-
+    background-image: url('/assets/images/page-1.png');
+    background-size: cover;
     color: var(--dark-background-color);
 }
 
@@ -364,7 +375,7 @@ body {
     align-self: stretch;
 
     background: var(--light-background-color);
-    box-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 13px 19px 0 rgba(0, 0, 0, 0.07);
 }
 
 .card-row-1 {
@@ -441,19 +452,16 @@ body {
     align-items: flex-start;
     width: 320px;
     box-sizing: border-box;
-
-    background: var(--light-background-color);
 }
 
 .product-card-image-container {
     display: flex;
     flex-direction: column;
     align-self: stretch;
-    height: 300px;
-    width: 320px;
+    min-height: 300px;
+    min-width: 320px;
+    width: 100%;
     justify-content: space-between;
-
-    background: black;
 }
 
 .sale-tag {
@@ -504,6 +512,8 @@ body {
     gap: 10px;
     align-self: stretch;
     box-sizing: border-box;
+
+    background: var(--light-background-color);
 }
 
 .link-product-category {
@@ -704,7 +714,7 @@ body {
 
 .testimonials-card-user {
     display: flex;
-    padding: 0px 25px;
+    padding: 0 25px;
     flex-direction: column;
     align-items: center;
     gap: 5px;
@@ -794,7 +804,52 @@ body {
     width: 35vw;
 }
 
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .navbar-brand {
+        padding: 0;
+    }
+
+    .navbar-content {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 30px;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-auth {
+        gap: 10px;
+    }
+}
 @media screen and (max-width: 500px) {
+    .navbar-brand__name {
+        font-size: 18px;
+    }
+
+    .navbar-menu__button {
+        font-size: 12px;
+        font-weight: 500;
+        padding: 5px 10px;
+    }
+
+
+    .header-description {
+        max-width: 100%;
+    }
+
+    .headline {
+        font-size: 36px;
+        line-height: 60px;
+    }
+
     .vertical-padding-container {
         padding: 80px 0;
         gap: 40px;
